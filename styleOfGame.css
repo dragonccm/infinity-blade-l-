@@ -1,0 +1,90 @@
+/* backgr */
+.enemyArena{
+    flex: 3;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+}
+.cardArena{
+    flex: 2;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+.StatusBar{
+    flex: 0.5;
+    width: 100%;
+    border: 1px solid black;
+}
+.MainContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+ul{
+    list-style-type: none;
+}
+/* backgr */
+
+
+/* car */
+.cardArena .red {
+    background-color: #f43f5e;
+}
+.cardArena .blue {
+    background-color: #3b82f6;
+}
+.cardArena .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+}
+.cardArena .card p.tip {
+    font-size: 1em;
+    font-weight: 700;
+}
+.cardArena .card p.second-text {
+    font-size: 0.7em;
+}
+.cardArena .card:hover {
+    transform: scale(1.1, 1.1);
+}
+.cardArena:hover > .card:not(:hover) {
+    transform: scale(0.9, 0.9);
+}
+
+/* car */
+
+/* enemyArena */
+.enemyArena-Status{
+    flex: 1;
+    font-size: 100px;
+}
+.enemyArena-Img{
+    flex: 3;
+}
+.enemyArena-Hints{
+    flex: 1;
+    font-size: 40px;
+}
+#Monster{
+    width: 100%;
+    height: 600px;
+}
+/* enemyArena */
+
+/* StatusBar */
+
+
+/* StatusBar */
