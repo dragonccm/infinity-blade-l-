@@ -14,10 +14,10 @@
     <div class="Main-screen">
         <div class="healthbar-enemy">
             <label>Hp:</label>
-            <span id="enemy-currentHp">1000</span>
+            <span id="enemy-currentHp">100</span>
         </div>
         <div class="enemy-arena">
-            <img src="a.png"id="Enemy">
+            <img src="a.png" id="Enemy">
         </div>
         <div class="card-arena">
             <div class="swiper mySwiper">
@@ -34,15 +34,31 @@
                 </div>
             </div>
         </div>
-        <div class="healthbar-player">
-            <label>Player Name: <span id="Player-name">long</span></label>
-            <label>Hp: <span id="Player-name">100</span></label>
-            <label>Mana: <span id="Player-name">100</span></label>
+        <!-- <button class="player-info">
+            <div class="popup-content" onmouseover="showDetails(this)" ontouchstart="showDetails(this)">
+                <label>Hp: <span id="Player-name">100</span></label>
+                <label>Mana: <span id="Player-name">100</span></label>
+            </div>
+            <div class="healthbar-player">
+                <label>Player Name: <span id="Player-name">long</span></label>
+                <label>Hp: <span id="Player-name">100</span></label>
+                <label>Mana: <span id="Player-name">100</span></label>
+            </div> 
+        </button> -->
+        <div class="player-bar">
+            <div class="health-bar" data-total="1000" data-value="1000">
+                <div class="health">
+                    <div class="hit"></div>
+                </div>
+            </div>
+            <div class="mana-bar" data-total="1000" data-value="1000">
+                <div class="mana">
+                    <div class="hit"></div>
+                </div>
+            </div>
         </div>
-        <div class="drag-card"></div>
-        
     </div>
-    
+
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="main.js"></script>

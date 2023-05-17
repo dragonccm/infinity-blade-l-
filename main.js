@@ -41,33 +41,101 @@ const swiper = new Swiper(".mySwiper", {
   draggable: true,
 });
 
-let isDragging = false;
-let startPosition = 0;
+// let isDragging = false;
+// let startPosition = 0;
 
-swiper.on('touchStart', function(event) {
-  console.log('start');
-  isDragging = true;
-  startPosition = event.clientX;
-});
+// swiper.on('touchStart', function(event) {
+//   console.log('start');
+//   isDragging = true;
+//   startPosition = event.clientX;
+// });
 
-swiper.on('touchMove', function(event) {
-  if (isDragging) {
-    console.log('move');
-    console.log(event)
-    let distance = event.clientX - startPosition;
-    console.log(distance)
-    console.log(swiper.translate)
-    swiper.setTranslate(swiper.translate + distance);
-  }
-});
+// swiper.on('touchMove', function(event) {
+//   if (isDragging) {
+//     console.log('move');
+//     console.log(event)
+//     let distance = event.clientX - startPosition;
+//     console.log(distance)
+//     console.log(swiper.translate)
+//     swiper.setTranslate(swiper.translate + distance);
+//   }
+// });
 
-swiper.on('touchEnd', function() {
-  console.log('end');
-  isDragging = false;
-});
+// swiper.on('touchEnd', function() {
+//   console.log('end');
+//   isDragging = false;
+// });
 
 // swiper.on('mouseleave', function() {
 //   isDragging = false;
 // });
 
 
+////////////////////// health-bar /////////////////////////
+let hBar = $('.health-bar'), //big bar
+  mBar = hBar.find('.mana-bar'),
+  mana = hBar.find('.mana'), //bar
+  health = hBar.find('.mana'),
+  hit = hBar.find('.hit');
+
+function applyDamage(damage, bigbar, bar) {
+  let total = bigbar.data('total'),
+    value = bigbar.data('value');
+
+  if (value < 0) {
+    console.log("You're dead, reset.");
+    return;
+  }
+
+  let newValue = value - damage;
+  let barWidth = (newValue / total) * 100;
+  let hitWidth = (damage / value) * 100 + "%";
+
+  hit.css('width', hitWidth);
+  bigbar.data('value', newValue);
+
+  setTimeout(function () {
+    hit.css({ 'width': '0' });
+    bar.css('width', barWidth + "%");
+  }, 500);
+
+  console.log(value, damage, hitWidth);
+
+  if (value < 0) {
+    console.log("DEAD");
+  }
+}
+
+function applybuff(buff, bigbar, bar) {
+  let total = bigbar.data('total'),
+    value = bigbar.data('value');
+
+  if (value >= 100) {
+    console.log("Health full");
+    return;
+  }
+
+  let newValue = Math.min(value + buff, 100);
+  let barWidth = (newValue / total) * 100;
+  let hitWidth = (buff / value) * 100 + "%";
+
+  hit.css('width', hitWidth);
+  bigbar.data('value', newValue);
+
+  setTimeout(function () {
+    hit.css({ 'width': '0' });
+    bar.css('width', barWidth + "%");
+  }, 500);
+
+  console.log(value, buff, hitWidth);
+
+  if (value >= 100) {
+    console.log("Health full");
+  }
+}
+
+function resetHealthBar(bar, bigbar) {
+  bigbar.data('value', hBar.data('total'));
+  hit.css({ 'width': '0' });
+  bar.css('width', '100%');
+}
