@@ -36,8 +36,8 @@
 
 const swiper = new Swiper(".mySwiper", {
   effect: "cards",
-  // grabCursor: true,
-  // mousewheel: true,
+  grabCursor: true,
+  mousewheel: true,
   draggable: true,
 });
 
