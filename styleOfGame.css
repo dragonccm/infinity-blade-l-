@@ -2,20 +2,17 @@
 .enemyArena{
     flex: 3;
     width: 100%;
-    border: 1px solid black;
     display: flex;
 }
 .cardArena{
     flex: 2;
     width: 100%;
-    border: 1px solid black;
     display: flex;
     justify-content: space-around;
 }
 .StatusBar{
     flex: 0.5;
     width: 100%;
-    border: 1px solid black;
 }
 .MainContainer{
     position: absolute;
