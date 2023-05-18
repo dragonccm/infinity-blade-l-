@@ -140,16 +140,15 @@ function resetHealthBar(bar, bigbar) {
   bar.css('width', '100%');
 }
 // card list
-
 const cardList = document.querySelector('.card-list');
 const cards = document.querySelectorAll('.card');
 
-cardList.addEventListener('scroll', function() {
+cardList.addEventListener('scroll', function () {
   const cardListWidth = cardList.offsetWidth;
   const cardListScrollLeft = cardList.scrollLeft;
   const cardListCenter = cardListScrollLeft + cardListWidth / 2;
 
-  cards.forEach(function(card) {
+  cards.forEach(function (card) {
     const cardWidth = card.offsetWidth;
     const cardOffsetLeft = cardList.scrollLeft + card.getBoundingClientRect().left + cardWidth / 2;
 
@@ -160,6 +159,7 @@ cardList.addEventListener('scroll', function() {
     }
   });
 });
+
 
 function goLeft() {
   const cardList = document.querySelector('.card-list');
@@ -181,3 +181,10 @@ function goRight() {
 }
 
 
+function goToLeftEnd() {
+  cardList.scrollTo(0, 0); // Scroll to the left end of the card list
+}
+
+function goToRightEnd() {
+  cardList.scrollTo(cardList.scrollWidth, 0); // Scroll to the right end of the card list
+}
