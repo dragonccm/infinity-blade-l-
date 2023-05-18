@@ -71,6 +71,7 @@ body {
 	padding: 0;
 }
 
+/* 
 html,
 body {
 	position: relative;
@@ -136,7 +137,7 @@ body {
 
 .swiper-slide:nth-child(10n) {
 	background-color: rgb(54, 94, 77);
-}
+} */
 
 /* swipper */
 
@@ -154,6 +155,7 @@ body {
 	background-color: rgb(35, 99, 19);
 } */
 
+/* player health */
 /* .player-info {
 	position: relative;
 	width: 100%;
@@ -216,6 +218,7 @@ body {
 	}
 } */
 
+
 .player-bar {
 	display: flex;
 	flex: 0.5;
@@ -228,7 +231,7 @@ body {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 50%;
-	height: 20px;
+	height: 30px;
 	padding: 5px;
 	background: #ddd;
 	-webkit-border-radius: 5px;
@@ -254,7 +257,7 @@ body {
 .health {
 	background: #e86bb9;
 	width: 100%;
-	height: 15px;
+	height: 20px;
 	position: relative;
 
 	transition: width .5s linear;
@@ -263,7 +266,7 @@ body {
 .mana {
 	background: #6bb9e8;
 	width: 100%;
-	height: 15px;
+	height: 20px;
 	position: relative;
 	transition: width .5s linear;
 }
@@ -277,4 +280,76 @@ body {
 	width: 0px;
 
 	transition: width .5s linear;
+}
+
+/* card list */
+.card-arena {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.scroll-btn {
+	text-align: center;
+	width: 100px;
+	height: 100%;
+}
+
+.card-list {
+	display: flex;
+	/* padding: 3rem; */
+	margin: 0px 10px;
+    overflow-x: scroll;
+}
+
+
+
+.card-list::-webkit-scrollbar {
+	width: 10px;
+    height: 10px;
+}
+.card-list::-webkit-scrollbar-thumb {
+    background: #201c29;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+
+.card-list::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+}
+
+.card {
+	/* flex: 0 0 auto; */
+	min-width: 240px;
+	max-width: 240px;
+	height: 320px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border-radius: 18px;
+	border: solid 3px #000;
+	font-size: 22px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #6bb9e8;
+	margin-right: 10px;
+	padding: 1rem;
+	transition: .2s;
+}
+
+.card.center {
+	/* Apply styles for the centered card */
+	/* Example: */
+	transform: translateY(-1rem);
+  }
+  
+  .card.center ~ .card {
+	/* Apply styles for the adjacent cards */
+	/* Example: */
+	transform: translateX(130px);
+  }
+
+.card:not(:first-child) {
+    margin-left: -130px;
 }

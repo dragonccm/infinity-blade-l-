@@ -72,11 +72,11 @@ const swiper = new Swiper(".mySwiper", {
 
 
 ////////////////////// health-bar /////////////////////////
-let hBar = $('.health-bar'), //big bar
-  mBar = hBar.find('.mana-bar'),
-  mana = hBar.find('.mana'), //bar
-  health = hBar.find('.mana'),
-  hit = hBar.find('.hit');
+let hBar = document.querySelector('.health-bar'), //big bar
+  mBar = document.querySelector('.mana-bar'),
+  mana = document.querySelector('.mana'), //bar
+  health = document.querySelector('.health'),
+  hit = document.querySelector('.hit');
 
 function applyDamage(damage, bigbar, bar) {
   let total = bigbar.data('total'),
@@ -139,3 +139,45 @@ function resetHealthBar(bar, bigbar) {
   hit.css({ 'width': '0' });
   bar.css('width', '100%');
 }
+// card list
+
+const cardList = document.querySelector('.card-list');
+const cards = document.querySelectorAll('.card');
+
+cardList.addEventListener('scroll', function() {
+  const cardListWidth = cardList.offsetWidth;
+  const cardListScrollLeft = cardList.scrollLeft;
+  const cardListCenter = cardListScrollLeft + cardListWidth / 2;
+
+  cards.forEach(function(card) {
+    const cardWidth = card.offsetWidth;
+    const cardOffsetLeft = cardList.scrollLeft + card.getBoundingClientRect().left + cardWidth / 2;
+
+    if (Math.abs(cardOffsetLeft - cardListCenter) < cardWidth / 2) {
+      card.classList.add('center');
+    } else {
+      card.classList.remove('center');
+    }
+  });
+});
+
+function goLeft() {
+  const cardList = document.querySelector('.card-list');
+  const cardWidth = document.querySelector('.card').offsetWidth;
+  const scrollAmount = Math.floor(cardWidth / 2); // Scroll by half the card width
+
+  cardList.scrollLeft -= scrollAmount;
+  cardList.scrollLeft = Math.max(cardList.scrollLeft, 0); // Ensure the scroll position does not go below 0
+}
+
+function goRight() {
+  const cardList = document.querySelector('.card-list');
+  const cardWidth = document.querySelector('.card').offsetWidth;
+  const scrollAmount = Math.floor(cardWidth / 2); // Scroll by half the card width
+
+  cardList.scrollLeft += scrollAmount;
+  const maxScrollLeft = cardList.scrollWidth - cardList.clientWidth;
+  cardList.scrollLeft = Math.min(cardList.scrollLeft, maxScrollLeft); // Ensure the scroll position does not exceed the maximum
+}
+
+
