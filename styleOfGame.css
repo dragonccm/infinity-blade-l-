@@ -29,7 +29,6 @@ label {
 	background-color: rgba(255, 255, 255, 0.5);
 	display: flex;
 	font-size: 30px;
-	border: 4px #000 solid;
 }
 
 .enemy-area {
@@ -287,7 +286,7 @@ body {
 .card-area {
 	flex: 3;
 	width: 100%;
-	height: 100%;
+	height: 10%;
 	/* background-color: rgba(12, 253, 104, 0.384); */
 	display: flex;
 	/* justify-content: center;
@@ -304,36 +303,27 @@ body {
 }
 
 .card-list {
-	z-index: 1000;
 	display: flex;
-	/* padding: 3rem; */
-	margin: 0px 10px;
+	height: 240px;;
+	padding: 10px;
+	/* margin: 0px 10px; */
+	/* margin-bottom: 10px; */
 	overflow-x: scroll;
 	scroll-behavior: smooth;
+	-ms-overflow-style: none;  /* IE and Edge */
+  	scrollbar-width: none;  /* Firefox */
 }
 
-
-
+/* Hide scrollbar for Chrome, Safari and Opera */
 .card-list::-webkit-scrollbar {
-	width: 10px;
-	height: 10px;
-}
-
-.card-list::-webkit-scrollbar-thumb {
-	background: #201c29;
-	border-radius: 10px;
-	box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
-}
-
-.card-list::-webkit-scrollbar-track {
-	background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+	display: none;
 }
 
 .card {
 	/* flex: 0 0 auto; */
-	min-width: 240px;
-	max-width: 240px;
-	height: 320px;
+	min-width: 120px;
+	max-width: 120px;
+	height: 160px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -344,31 +334,30 @@ body {
 	font-weight: bold;
 	color: #fff;
 	background-color: #6bb9e8;
-	margin-right: 10px;
+	/* margin-right: 10px; */
 	margin-top: 18px;
 	padding: 1rem;
 	transition: .2s;
 	/* Add cursor style */
 	cursor: grab;
 	
-	will-change: transform;
+	/* will-change: transform; */
 }
 
 .card.center {
 	/* Apply styles for the centered card */
 	/* Example: */
-	transform: translateY(-1rem);
+	transform: /*translateY(-1rem)*/ scale(1.2);
 }
 
-.card.center~.card {
-	/* Apply styles for the adjacent cards */
-	/* Example: */
+/* .card.center~.card {
 	transform: translateX(130px);
 }
 
 .card:not(:first-child) {
 	margin-left: -130px;
 }
+*/
 
 /* .card:active {
 	animation go here
