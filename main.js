@@ -139,6 +139,7 @@ function resetHealthBar(bar, bigbar) {
   hit.css({ 'width': '0' });
   bar.css('width', '100%');
 }
+
 // card list
 const cardList = document.querySelector('.card-list');
 const cards = document.querySelectorAll('.card');
