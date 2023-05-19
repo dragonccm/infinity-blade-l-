@@ -34,7 +34,7 @@ label {
 .enemy-area {
 	flex: 4;
 	width: 100%;
-	height: 100%;
+	height: 63vh;
 	/* background-color: rgba(0, 0, 0, 0.514); */
 }
 
