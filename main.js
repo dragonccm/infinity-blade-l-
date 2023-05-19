@@ -34,12 +34,12 @@
 //   }
 // });
 
-const swiper = new Swiper(".mySwiper", {
-  effect: "cards",
-  grabCursor: true,
-  mousewheel: true,
-  draggable: true,
-});
+// const swiper = new Swiper(".mySwiper", {
+//   effect: "cards",
+//   grabCursor: true,
+//   mousewheel: true,
+//   draggable: true,
+// });
 
 // let isDragging = false;
 // let startPosition = 0;

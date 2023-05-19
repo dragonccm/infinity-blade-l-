@@ -1,7 +1,13 @@
 body {
 	background-image: url(a7j6cfnxkibgb4r2.jpg);
+
+	/* Full height */
+	height: 100%; 
+
+	/* Center and scale the image nicely */
+	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
 }
 
 label {
@@ -9,7 +15,7 @@ label {
 }
 
 .Main-screen {
-	position: absolute;
+	/* position: absolute; */
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -26,11 +32,11 @@ label {
 	border: 4px #000 solid;
 }
 
-.enemy-arena {
+.enemy-area {
 	flex: 4;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.514);
+	/* background-color: rgba(0, 0, 0, 0.514); */
 }
 
 #Enemy {
@@ -38,19 +44,14 @@ label {
 	height: 100%;
 }
 
-.card-arena {
-	flex: 3;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(12, 253, 104, 0.384);
-}
-
-
 /* swipper */
-html,
+/* html,
 body {
 	position: relative;
-	height: 100%;
+	height: 90%;
+	background-image: url(a7j6cfnxkibgb4r2.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 body {
@@ -69,7 +70,7 @@ body {
 	color: #000;
 	margin: 0;
 	padding: 0;
-}
+} */
 
 /* 
 html,
@@ -283,10 +284,14 @@ body {
 }
 
 /* card list */
-.card-arena {
+.card-area {
+	flex: 3;
+	width: 100%;
+	height: 100%;
+	/* background-color: rgba(12, 253, 104, 0.384); */
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	/* justify-content: center;
+	align-items: center; */
 }
 
 .scroll-btn {
@@ -299,6 +304,7 @@ body {
 }
 
 .card-list {
+	z-index: 1000;
 	display: flex;
 	/* padding: 3rem; */
 	margin: 0px 10px;
@@ -339,6 +345,7 @@ body {
 	color: #fff;
 	background-color: #6bb9e8;
 	margin-right: 10px;
+	margin-top: 18px;
 	padding: 1rem;
 	transition: .2s;
 	/* Add cursor style */
