@@ -153,3 +153,12 @@ function goToLeftEnd() {
 function goToRightEnd() {
 	cardList.scrollTo(cardList.scrollWidth, 0); // Scroll to the right end of the card list
 }
+// 
+window.addEventListener('resize', function() {
+	var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  
+	console.log('Chiều rộng của điện thoại: ' + width + 'px');
+	console.log('Chiều cao của điện thoại: ' + height + 'px');
+  });
+  
