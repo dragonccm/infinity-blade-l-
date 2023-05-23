@@ -154,11 +154,31 @@ function goToRightEnd() {
 	cardList.scrollTo(cardList.scrollWidth, 0); // Scroll to the right end of the card list
 }
 // 
-window.addEventListener('resize', function() {
+// Lưu trữ giá trị padding ban đầu
+// Lưu trữ giá trị padding ban đầu
+function adjustPadding() {
 	var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   
 	console.log('Chiều rộng của điện thoại: ' + width + 'px');
 	console.log('Chiều cao của điện thoại: ' + height + 'px');
-  });
+  
+	var paddingValue = 0.5 * height - 170;
+	console.log('Giá trị padding: ' + paddingValue + 'px');
+  
+	var enemyarearesize = document.getElementById("enemy-area");
+	enemyarearesize.style.paddingTop = paddingValue + "px";
+	enemyarearesize.style.paddingBottom = paddingValue + "px";
+	enemyarearesize.style.paddingLeft = "0";
+	enemyarearesize.style.paddingRight = "0";
+  }
+  
+  // Gọi hàm adjustPadding khi vào web
+  adjustPadding();
+  
+  // Thêm sự kiện resize để gọi lại hàm adjustPadding khi resize màn hình
+  window.addEventListener('resize', adjustPadding);
+  
+
+
   
